@@ -1,0 +1,46 @@
+def test_selection():
+    for lista_teste in listas:   
+        selectionSort(lista_teste)
+
+
+def test_merge():
+    for lista_teste in listas:  
+        mergeSort(lista_teste)
+
+
+def test_hibrido():
+    for lista_teste in listas:  
+        hibridSort(lista_teste)
+
+
+def randlist(lenght):
+    list = []
+    for i in range(lenght):
+        random = randint(0,200000)
+        list.append(random)
+    
+    return list
+
+
+if __name__ == "__main__":
+    list = []
+    qntdd_listas = 100
+    for i in range(qntd_listas):
+        list.append(randlistas(1000))
+
+    tempo_1k_selection = timeit.timeit(stmt=test_selection, number=1)
+    tempo_1k_merge = timeit.timeit(stmt=test_merge, number=1)
+    tempo_1k_hibrido = timeit.timeit(stmt=test_hibrido, number=1)
+
+
+
+
+
+ listas = []
+    qntd_listas = 100
+    for i in range(qntd_listas):
+        listas.append(randlistas(10000))
+    
+    tempo_10k_selection = timeit.timeit(stmt=test_selection, number=1)
+    tempo_10k_merge = timeit.timeit(stmt=test_merge, number=1)
+    tempo_10k_hibrido = timeit.timeit(stmt=test_hibrido, number=1)
