@@ -1,0 +1,101 @@
+def mergeSort(lista):
+    if len(lista)>1:
+        meio = len(lista)//2
+        esquerda = lista[:meio]
+        direita = lista[meio:]
+        mergeSort(esquerda)
+        mergeSort(direita)
+        a=0
+        b=0
+        c=0
+
+        while a < len(esquerda) and b < len(direita):
+            if esquerda[a] < direita[b]:
+                lista[c]=esquerda[a]
+                a=a+1
+            else:
+                lista[c]=direita[b]
+                b=b+1
+            c=c+1
+
+        while a < len(esquerda):
+            lista[c]=esquerda[a]
+            a=a+1
+            c=c+1
+
+        while b < len(direita):
+            lista[c]=direita[b]
+            b=b+1
+            c=c+1
+
+    return lista
+
+
+
+
+def hibridSortlista):
+    if len(lista)>128:
+        meio = len(lista)//2
+        esquerda = lista[:meio]
+        direita = lista[meio:]
+        hibridSort(esquerda)
+        hibridSort(direita)
+        a=0
+        b=0
+        c=0
+
+        while a < len(esquerda) and b < len(direita):
+            if esquerda[a] < direita[b]:
+                lista[c]=esquerda[a]
+                a=a+1
+            else:
+                lista[c]=direita[b]
+                b=b+1
+            c=c+1
+
+        while a < len(esquerda):
+            lista[c]=esquerda[a]
+            a=a+1
+            c=c+1
+
+        while b < len(direita):
+            lista[c]=direita[b]
+            b=b+1
+            c=c+1
+
+    else:
+        limiteE = 0
+        for limiteDo in range(len(lista)-1, lenlista)//2-1, -1):
+            pos_maior = int(limiteE)
+            pos_menor = int(limiteDo)
+
+            for posicao in range(limiteE, limiteDo+1):
+                if lista[posicao] >= lista[pos_maior]:
+                    pos_maior = posicao
+                    
+                if lista[posicao] <= lista[pos_menor]:
+                    pos_menor = posicao
+
+            if limiteDo == pos_menor and limiteE == pos_maior:
+               lista[limiteDo],lista[limiteE] = lista[limiteE], lista[limiteDo]
+            else:
+                tempo_maior = lista[limiteDo]
+                tempo_menor = lista[limiteE]
+                lista[limiteDo] = lista[pos_maior]
+                lista[pos_maior] = tempo_maior
+
+                if pos_menor != limiteDo and pos_maior != limiteE:
+                   lista[limiteE] = lista[pos_menor]
+                    lista[pos_menor] = tempo_menor
+
+                elif pos_menor == limiteDo:
+                    lista[limiteE] = tempo_maior
+                   lista[pos_maior] = tempo_menor
+
+                elif pos_maior == limiteE:
+                    lista[limiteE] = lista[pos_menor]
+                    lista[pos_menor] = tempo_maior
+
+            limiteE = limiteE + 1
+
+    return lista
