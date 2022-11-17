@@ -1,3 +1,8 @@
+from sorts import *
+from random import randint
+import timeit
+
+
 def test_selection():
     for lista_teste in listas:   
         selectionSort(lista_teste)
@@ -32,7 +37,10 @@ if __name__ == "__main__":
     tempo_1k_merge = timeit.timeit(stmt=test_merge, number=1)
     tempo_1k_hibrido = timeit.timeit(stmt=test_hibrido, number=1)
 
-
+    print()
+    print(f"Selection com 1000 elementos: {tempo_1k_selection:.4f} segundos. Média: {tempo_1k_selection/qntd_listas:.4f} segundos.")
+    print(f"Merge com 1000 elementos: {tempo_1k_merge:.4f} segundos. Média: {tempo_1k_merge/qntd_listas:.4f} segundos.")
+    print(f"Híbrido com 1000 elementos: {tempo_1k_hibrido:.4f} segundos. Média: {tempo_1k_hibrido/qntd_listas:.4f} segundos.")
 
 
 
@@ -44,3 +52,8 @@ if __name__ == "__main__":
     tempo_10k_selection = timeit.timeit(stmt=test_selection, number=1)
     tempo_10k_merge = timeit.timeit(stmt=test_merge, number=1)
     tempo_10k_hibrido = timeit.timeit(stmt=test_hibrido, number=1)
+    
+    print()
+    print(f"Selection com 10000 elementos: {tempo_10k_selection:.4f} segundos. Média: {tempo_10k_selection/qntd_listas:.4f} segundos.")
+    print(f"Merge com 10000 elementos: {tempo_10k_merge:.4f} segundos. Média: {tempo_10k_merge/qntd_listas:.4f} segundos.")
+    print(f"Híbrido com 10000 elementos: {tempo_10k_hibrido:.4f} segundos. Média: {tempo_10k_hibrido/qntd_listas:.4f} segundos.")
