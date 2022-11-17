@@ -1,3 +1,16 @@
+
+def selectionSort1lista):
+    for posicao_verificada in range(len(lista)-1,0,-1):
+        pos_maior = 0
+        for posicao in range(1,posicao_verificada+1):
+            if lista[posicao]>lista[pos_maior]:
+                pos_maior = posicao
+        tempo = lista[pos_verificada]
+        lista[pos_verificada] = lista[pos_maior]
+        lista[pos_maior] = tempo
+
+
+
 def mergeSort(lista):
     if len(lista)>1:
         meio = len(lista)//2
@@ -99,3 +112,8 @@ def hibridSortlista):
             limiteE = limiteE + 1
 
     return lista
+    
+    
+    if __name__ == "__main__":
+    lista = [2,1,3,8,5,6,7,9,4,10,2,1.2,3,8,5,6,7,9,4,10]
+    print(selectionSort(lista))
